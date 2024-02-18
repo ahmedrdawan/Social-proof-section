@@ -1,0 +1,189 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --Very-Dark-Magenta: hsl(300, 43%, 22%);
+    --Soft-Pink: hsl(333, 80%, 67%);
+    --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+    --Light-Grayish-Magenta: hsl(300, 24%, 96%);
+    --White: hsl(0, 0%, 100%);
+}
+
+body {
+    font-size: 15px;
+    background-color: var(--White);
+    font-family: "League Spartan", sans-serif;
+}
+main {
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+}
+main::before,
+main::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+}
+main::before {
+    background-image: url(../images/bg-pattern-top-desktop.svg);
+    height: 71%;
+    left: 0;
+    top: 0;
+}
+main::after {
+    background-image: url(../images/bg-pattern-bottom-desktop.svg);
+    right: 0;
+    bottom: 0;
+    height: 100px;
+}
+
+.cointiner > header {
+    display: flex;
+    align-items: center;
+}
+.cointiner > header .text {
+    width: 398px;
+}
+.cointiner > header .text h1 {
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--Very-Dark-Magenta);
+}
+.cointiner > header .text p {
+    line-height: 1.4;
+    color: var(--Dark-Grayish-Magenta);
+    width: 90%;
+    margin: 15px auto;
+}
+.cointiner > header aside {
+    flex: 1;
+    margin-left: 40px;
+}
+.cointiner > header aside .rate {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--Light-Grayish-Magenta);
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    color: var(--Very-Dark-Magenta);
+    border-radius: 21px;
+    width: 350px;
+}
+.cointiner > header aside .rate:nth-child(2) {
+    margin-left: 50px;
+}
+.cointiner > header aside .rate:last-child {
+    margin-left: 100px;
+}
+
+footer {
+    margin-top: 30px;
+}
+footer .content {
+    display: flex;
+    gap: 20px;
+}
+footer .content .box {
+    background: var(--Very-Dark-Magenta);
+    border-radius: 8px;
+    padding: 30px 25px;
+}
+footer .content .box:nth-child(2) {
+    transform: translateY(40px);
+}
+footer .content .box:last-child {
+    transform: translateY(80px);
+    -webkit-transform: translateY(80px);
+    -moz-transform: translateY(80px);
+    -ms-transform: translateY(80px);
+    -o-transform: translateY(80px);
+}
+footer .content .box > header {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+footer .content .box > header img {
+    border-radius: 50%;
+    width: 32px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+footer .content .box > header h2 {
+    color: var(--Light-Grayish-Magenta);
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+footer .content .box > header span {
+    color: var(--Soft-Pink);
+}
+footer .content .box > p {
+    color: var(--Light-Grayish-Magenta);
+    width: 250px;
+}
+
+
+/* ==============================Media================================ */
+@media (max-width: 991px) {
+    main {
+        align-items: flex-start;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .cointiner > header {
+        flex-direction: column;
+        text-align: center;
+    }
+    footer .content {
+        flex-direction: column;
+    }
+    footer .content .box > p {
+        width: 445px;
+    }
+    footer .content .box:nth-child(2) {
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+    }
+    footer .content .box:last-child {
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+    }
+}
+@media (max-width: 768px) {
+    .cointiner > header aside {
+        margin: 0 auto;
+        width: 90%;
+    }
+    .cointiner > header aside .rate {
+        width: 100%;
+        flex-direction: column;
+    }
+    .cointiner > header aside .rate:nth-child(2),
+    .cointiner > header aside .rate:last-child {
+        margin-left: 0;
+    }
+    footer .content .box > p {
+        width: 100%;
+        font-size: 18px;
+    }
+    footer .content .box {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
